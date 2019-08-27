@@ -4,6 +4,10 @@
 	display:none;
 }
 
+html {
+	background: #202225;
+}
+
 #webview {
 	width: 100vw;
 	position: absolute;
