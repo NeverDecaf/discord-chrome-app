@@ -1,0 +1,106 @@
+.wordmark,
+.titleBar,
+.buttonClose,.buttonMin,.buttonMax {
+	display:none;
+}
+
+#webview {
+	width: 100vw;
+	position: absolute;
+	height: 100vh;
+}
+
+/* "mac", "win", "android", "cros", "linux", or "openbsd" */
+#webview.mac,
+#webview.win,
+#webview.linux,
+#webview.openbsd {
+	top: 22px;
+	height: calc(100vh - 22px);
+}
+
+.titleBar.mac,
+.titleBar.win,
+.titleBar.linux,
+.titleBar.openbsd {
+	display: inherit;
+	width: 100%;
+	height: 22px;
+	position: absolute;
+	background: #202225;
+	-webkit-app-region: drag;
+
+	flex-shrink: 0;
+	-webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse;
+	-webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+	display:flex;
+	
+	padding-top: 4px;
+}
+
+.wordmark.mac,
+.wordmark.win,
+.wordmark.linux,
+.wordmark.openbsd {
+	display: block;
+	position:absolute;
+	top: 0;
+	left: 0;
+	opacity: .6;
+	padding: 4px 8px 3px 8px;
+}
+
+.buttonClose.mac,.buttonMin.mac,.buttonMax.mac,
+.buttonClose.win,.buttonMin.win,.buttonMax.win,
+.buttonClose.linux,.buttonMin.linux,.buttonMax.linux,
+.buttonClose.openbsd,.buttonMin.openbsd,.buttonMax.openbsd {
+	display: flex;
+	
+    position: relative;
+    top: -4px;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    opacity: .6;
+    -webkit-app-region: no-drag;
+	-webkit-box-direction: reverse;
+	-webkit-box-align: center;
+	
+	display:flex;
+
+	-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+	justify-content: center;
+	
+	-webkit-box-pack: center;
+    -ms-flex-pack: center;
+	
+	margin: 0;
+    padding: 0;
+    border: 0;
+	
+	vertical-align: baseline;
+
+	line-height:16px;
+	pointer-events:auto;
+	user-select:none;
+}
+.buttonClose.mac:hover,
+.buttonClose.win:hover,
+.buttonClose.linux:hover,
+.buttonClose.openbsd:hover {
+    background-color: #f04747;
+	opacity:1;
+}
+.buttonMin.mac:hover,.buttonMax.mac:hover,
+.buttonMin.win:hover,.buttonMax.win:hover,
+.buttonMin.linux:hover,.buttonMax.linux:hover,
+.buttonMin.openbsd:hover,.buttonMax.openbsd:hover {
+	background-color: hsla(0,0%,100%,.05);
+	opacity:1;
+}

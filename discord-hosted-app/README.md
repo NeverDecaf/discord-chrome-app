@@ -1,0 +1,1 @@
+A hosted app version. This is basically a web page meaning it has access to all your extensions, etc.
