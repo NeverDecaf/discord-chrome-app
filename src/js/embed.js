@@ -25,7 +25,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 	switch (info.os) {
 		case 'mac':
 			csstoinject+=`
-			div[class*= directionColumn][class*= base] {
+			div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -35,7 +35,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'win':
 			csstoinject+=`
-			div[class*= directionColumn][class*= base] {
+			div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -45,7 +45,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'linux':
 			csstoinject+=`
-			div[class*= directionColumn][class*= base] {
+			div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -55,7 +55,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'openbsd':
 			csstoinject+=`
-			div[class*= directionColumn][class*= base] {
+			div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -78,6 +78,10 @@ webview.addEventListener('contentload', function () {
 	{
 		// clearAttention seems broken. it doesn't actually clear anything and after calling it drawAttention no longer does anything.
 		// curwindow.clearAttention();
+	}
+	else
+	{
+		document.getElementById('backdrop').style.opacity = e.data;
 	}
 	});
 	webview.executeScript({
@@ -121,7 +125,20 @@ window.onfocusout = focuslost;
     attributes: true,
     characterData: false,
   });
-			
+	var modal_observer = new MutationObserver(function(mutations) {	
+	    mutations.forEach(function(mutation) {
+			mutation.target.classList.forEach(function (cv, ci, lo) {
+				if (cv.startsWith('backdrop'))
+					messageSource.postMessage(mutation.target.style.opacity, messageOrigin);
+			});
+    });
+	});
+	modal_observer.observe(document.querySelector("div[data-no-focus-lock]"), {
+    childList: false,
+    subtree: true,
+    attributes: true,
+    characterData: false,
+  });
         }
     }
 });`});
