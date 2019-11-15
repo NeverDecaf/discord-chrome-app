@@ -25,7 +25,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 	switch (info.os) {
 		case 'mac':
 			csstoinject+=`
-			div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -35,7 +35,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'win':
 			csstoinject+=`
-			div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -45,7 +45,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'linux':
 			csstoinject+=`
-			div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
@@ -55,7 +55,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 		break;
 		case 'openbsd':
 			csstoinject+=`
-			div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
 			div[class^=wrapper] div[class*= scroller][class*= systemPad] {

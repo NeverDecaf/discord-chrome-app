@@ -1,1 +1,1 @@
-{"manifest_version":2,"name":"Discord","description":"Desktop App Clone","version":"1.2","icons":{"128":"128.png"},"app":{"background":{"scripts":["js/background.js"],"pages":["html/embed.html"]}},"permissions":["webview","fullscreen","notifications","audioCapture","videoCapture"]}
+{"manifest_version":2,"name":"Discord","description":"Desktop App Clone","version":"1.2.1","icons":{"128":"128.png"},"app":{"background":{"scripts":["js/background.js"],"pages":["html/embed.html"]}},"permissions":["webview","fullscreen","notifications","audioCapture","videoCapture"]}
