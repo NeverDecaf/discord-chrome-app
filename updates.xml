@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='mcmhfhikbhjpibicindoiheogjempkep'>
-    <updatecheck codebase='https://github.com/NeverDecaf/discord-chrome-app/releases/latest/download/discord-chrome-app.crx' version='1.2.2' />
+    <updatecheck codebase='https://github.com/NeverDecaf/discord-chrome-app/releases/latest/download/discord-chrome-app.crx' version='1.2.3' />
   </app>
 </gupdate>

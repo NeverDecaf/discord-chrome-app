@@ -25,40 +25,40 @@ chrome.runtime.getPlatformInfo(function (info) {
 	switch (info.os) {
 		case 'mac':
 			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
-			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
+			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
 				padding-top: 4px
 			}
 			`;
 		break;
 		case 'win':
 			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
-			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
+			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
 				padding-top: 4px
 			}
 			`;
 		break;
 		case 'linux':
 			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
-			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
+			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
 				padding-top: 4px
 			}
 			`;
 		break;
 		case 'openbsd':
 			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > div[class*= guilds] + div[class*= base] {
+			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
-			div[class^=wrapper] div[class*= scroller][class*= systemPad] {
+			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
 				padding-top: 4px
 			}
 			`;
