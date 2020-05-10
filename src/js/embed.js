@@ -68,7 +68,7 @@ chrome.runtime.getPlatformInfo(function (info) {
 
 webview.addEventListener('contentload', function () {
 
-	webview.contentWindow.postMessage('init', 'https://discordapp.com/*');
+	webview.contentWindow.postMessage('init', 'https://discord.com/*');
 	window.addEventListener('message', function(e) {
 	if (e.data == 'drawAttention') 
 	{
