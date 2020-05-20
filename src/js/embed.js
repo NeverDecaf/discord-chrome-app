@@ -20,45 +20,23 @@ div[class|=scroller] > div[class|=listItem]:last-child {
 }
 `;
 chrome.runtime.getPlatformInfo(function (info) {
+	var os = undefined;
+	if (info != undefined) {
 	var decos = document.getElementsByClassName("os-decoration"); for (var i=0; i<decos.length; i++) { decos[i].classList.add(info.os); }
+	os = info.os;
+	}
 	/* "mac", "win", "android", "cros", "linux", or "openbsd" */
-	switch (info.os) {
-		case 'mac':
-			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
-				border-radius: 8px 0 0 8px
-			}
-			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
-				padding-top: 4px
-			}
-			`;
+	switch (os) {
+		case 'android':
 		break;
-		case 'win':
-			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
-				border-radius: 8px 0 0 8px
-			}
-			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
-				padding-top: 4px
-			}
-			`;
+		case 'cros':
 		break;
-		case 'linux':
+		default:
 			csstoinject+=`
 			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
 				border-radius: 8px 0 0 8px
 			}
-			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
-				padding-top: 4px
-			}
-			`;
-		break;
-		case 'openbsd':
-			csstoinject+=`
-			div[class*= baseLayer] > div[class|=container] > nav[class*= guilds] + div[class*= base] {
-				border-radius: 8px 0 0 8px
-			}
-			nav[class^=wrapper] div[class*= scroller][class*= systemPad] {
+			nav[class^=wrapper] div[class*= scroller]:not([class*= scrollerWrap]) {
 				padding-top: 4px
 			}
 			`;

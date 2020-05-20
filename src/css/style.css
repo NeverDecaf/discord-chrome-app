@@ -14,19 +14,22 @@ html {
 	height: 100vh;
 }
 
-/* "mac", "win", "android", "cros", "linux", or "openbsd" */
-#webview.mac,
-#webview.win,
-#webview.linux,
-#webview.openbsd {
+svg[name="DiscordWordmark"] path {
+	fill: rgb(114, 118, 125);
+}
+
+/*
+below styles can be made platform specific by adding the result of chrome.runtime.getPlatformInfo to the selector as a class
+for example: #webview.mac
+possible classes are: "mac", "win", "android", "cros", "linux", or "openbsd"
+title bar is currently hidden on android and chrome os
+*/
+#webview:not(.cros):not(.android) {
 	top: 22px;
 	height: calc(100vh - 22px);
 }
 
-.titleBar.mac,
-.titleBar.win,
-.titleBar.linux,
-.titleBar.openbsd {
+.titleBar {
 	display: inherit;
 	width: 100%;
 	height: 22px;
@@ -52,10 +55,7 @@ html {
     transition: background .2s ease-in;
 }
 
-#backdrop.mac,
-#backdrop.win,
-#backdrop.linux,
-#backdrop.openbsd {
+#backdrop {
 	width: 100%;
 	height: 22px;
 	position: absolute;
@@ -64,10 +64,7 @@ html {
 	opacity: 0;
 }
 
-#barbackground.mac,
-#barbackground.win,
-#barbackground.linux,
-#barbackground.openbsd {
+#barbackground {
 	width: 100%;
 	height: 22px;
 	position: absolute;
@@ -75,10 +72,7 @@ html {
 	z-index: -2;
 }
 
-.wordmark.mac,
-.wordmark.win,
-.wordmark.linux,
-.wordmark.openbsd {
+.wordmark {
 	display: block;
 	position:absolute;
 	top: 0;
@@ -87,14 +81,7 @@ html {
 	padding: 4px 9px 3px 9px;
 }
 
-svg[name="DiscordWordmark"] path {
-	fill: rgb(114, 118, 125);
-}
-
-.buttonClose.mac,.buttonMin.mac,.buttonMax.mac,
-.buttonClose.win,.buttonMin.win,.buttonMax.win,
-.buttonClose.linux,.buttonMin.linux,.buttonMax.linux,
-.buttonClose.openbsd,.buttonMin.openbsd,.buttonMax.openbsd {
+.buttonClose,.buttonMin,.buttonMax {
 	display: flex;
 	
     position: relative;
@@ -127,17 +114,11 @@ svg[name="DiscordWordmark"] path {
 	pointer-events:auto;
 	user-select:none;
 }
-.buttonClose.mac:hover,
-.buttonClose.win:hover,
-.buttonClose.linux:hover,
-.buttonClose.openbsd:hover {
+.buttonClose:hover {
     background-color: #f04747;
 	opacity:1;
 }
-.buttonMin.mac:hover,.buttonMax.mac:hover,
-.buttonMin.win:hover,.buttonMax.win:hover,
-.buttonMin.linux:hover,.buttonMax.linux:hover,
-.buttonMin.openbsd:hover,.buttonMax.openbsd:hover {
+.buttonMin:hover,.buttonMax:hover {
 	background-color: rgba(79, 84, 92, 0.16);
 	opacity:1;
 }
