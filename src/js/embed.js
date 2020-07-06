@@ -14,8 +14,8 @@ document.getElementById("buttonMin").addEventListener("click", function() {
 });
 /* hide "Download Apps" item */
 csstoinject=`
-div[class|=scroller] > div[class|=listItem]:nth-last-child(2),
-div[class|=scroller] > div[class|=listItem]:last-child {
+div[class|=scroller][dir="ltr"] > div[class|=listItem]:nth-last-of-type(2),
+div[class|=scroller][dir="ltr"] > div[class|=listItem]:nth-last-of-type(3) {
 	display:none
 }
 `;
