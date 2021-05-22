@@ -1,3 +1,7 @@
+# EoL
+### The successor to this project can be found here: [Discord-PWA](https://github.com/NeverDecaf/discord-PWA)
+As of June 2022, [Chromium no longer supports Chrome Apps](https://blog.chromium.org/2020/08/changes-to-chrome-app-support-timeline.html). You can still use this app if you are using an older browser (or fork that still supports apps), but it will no longer be maintained. See [Discord-PWA](https://github.com/NeverDecaf/discord-PWA) for a replacement.
+
 # discord-chrome-app
 A chrome packaged app that mimics the desktop client while maintaining the privacy and security of the chrome browser sandbox.
 
